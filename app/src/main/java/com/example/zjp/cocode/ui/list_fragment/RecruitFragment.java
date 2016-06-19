@@ -9,6 +9,7 @@ import java.util.List;
  * Created by zjp on 16-6-18.
  */
 public class RecruitFragment extends BaseListFragment{
+
     @Override
     public List<ItemModel> getList() {
         return DataLoader.loadnew();

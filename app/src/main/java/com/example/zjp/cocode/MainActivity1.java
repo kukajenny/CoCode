@@ -2,6 +2,9 @@ package com.example.zjp.cocode;
 
 
 import android.graphics.Color;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,14 +17,15 @@ import com.example.zjp.cocode.ui.menu_fragment.MeFragment;
 import com.example.zjp.cocode.ui.menu_fragment.MessageFragment;
 import com.example.zjp.cocode.ui.menu_fragment.TypeFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity1 extends FragmentActivity{
 
     private AHBottomNavigation bottomNavigation;
-    private HomeFragment homeFragment;
-    private TypeFragment typeFragment;
-    private MessageFragment messageFragment;
-    private MeFragment meFragment;
+    private Fragment homeFragment;
+    private Fragment typeFragment;
+    private Fragment messageFragment;
+    private Fragment meFragment;
     private FragmentTransaction transaction;
+    private FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         homeFragment = new HomeFragment();
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.id_content, homeFragment).commit();
+                .replace(R.id.id_content, homeFragment).commit();
 
     }
 
@@ -103,23 +107,28 @@ public class MainActivity extends AppCompatActivity {
                 switch (position){
                     case 0:
                         if(homeFragment==null){
-
                             homeFragment = new HomeFragment();
                          }
                         transaction.replace(R.id.id_content, homeFragment);
-
                         break;
                     case 1:
-                        if(typeFragment==null) typeFragment = new TypeFragment();
-                        transaction.replace(R.id.id_content,typeFragment);
+                        if(typeFragment==null) {
+                            typeFragment = new TypeFragment();
+                        }
+                        transaction.replace(R.id.id_content, typeFragment);
                         break;
                     case 2:
-                        if(messageFragment==null) messageFragment = new MessageFragment();
-                        transaction.replace(R.id.id_content,messageFragment);
+                        if(messageFragment==null) {
+                            messageFragment = new MessageFragment();
+                        }
+                        transaction.replace(R.id.id_content, messageFragment);
                         break;
                     case 3:
-                        if(meFragment==null)meFragment = new MeFragment();
-                        transaction.replace(R.id.id_content,meFragment);
+                        if(meFragment==null){
+                            meFragment = new MeFragment();
+                        }
+                        transaction.replace(R.id.id_content, meFragment);
+                        break;
                 }
                 transaction.commit();
                 return true;

@@ -2,6 +2,7 @@ package com.example.zjp.cocode.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.example.zjp.cocode.ui.list_fragment.BaseListFragment;
@@ -61,7 +62,7 @@ public class PagerAdapterWrapper {
      * We'd better　declare it to static
      * tips:A static nested class does not have a reference to a nesting instance -- By MummyDing
      */
-    static class PagerAdapter extends FragmentStatePagerAdapter {
+    static class PagerAdapter extends FragmentPagerAdapter {
         List<BaseListFragment> listFragments;
         private List<String>list_Title;
         public PagerAdapter(FragmentManager fm, List<BaseListFragment> listFragments,List<String>list_Title) {
@@ -80,11 +81,13 @@ public class PagerAdapterWrapper {
 
         @Override
         public int getCount() {
+            if(list_Title==null)return 0;
             return list_Title.size();
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
+            if(list_Title==null)return null;
             return list_Title.get(position % list_Title.size());
         }
     }
