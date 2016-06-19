@@ -17,7 +17,7 @@ import com.example.zjp.cocode.ui.menu_fragment.MeFragment;
 import com.example.zjp.cocode.ui.menu_fragment.MessageFragment;
 import com.example.zjp.cocode.ui.menu_fragment.TypeFragment;
 
-public class MainActivity1 extends FragmentActivity{
+public class MainActivity extends FragmentActivity{
 
     private AHBottomNavigation bottomNavigation;
     private Fragment homeFragment;
