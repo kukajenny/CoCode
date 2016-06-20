@@ -10,16 +10,20 @@
         android:layout_height="wrap_content">
         <android.support.design.widget.TabLayout
             android:id="@+id/tab_tablayout"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="8"
             app:tabIndicatorColor="#FFE64D43"
             app:tabSelectedTextColor="#FFE64D43"
             android:background="#fff"/>
-        <ImageButton
+        <!--<LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="3"
+            android:background="#fff"></LinearLayout>-->
+        <ImageButton
+            android:id="@+id/tab_ib_more"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:background="#fff"
             android:src="@drawable/more"
             android:padding="10dp"

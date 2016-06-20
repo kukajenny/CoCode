@@ -6,9 +6,9 @@ import com.example.zjp.cocode.support.DataLoader;
 import java.util.List;
 
 /**
- * Created by zjp on 16-6-18.
+ * Created by zjp on 16-6-19.
  */
-public class BeginnerFragment extends BaseListFragment{
+public class NewFragment extends BaseListFragment{
 
     @Override
     public List<ItemModel> getList() {

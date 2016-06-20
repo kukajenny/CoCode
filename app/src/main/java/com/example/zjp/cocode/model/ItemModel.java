@@ -6,10 +6,13 @@ package com.example.zjp.cocode.model;
 public class ItemModel {
     private String imageurl;
     private String title;
-    private String tips;
     private String time;
-    private String num;
+    private int num_views;
+    private int num_like;
+    private String slug;
+    private String name;
     private String type;
+    private int id;
 
     public String getImageurl() {
         return imageurl;

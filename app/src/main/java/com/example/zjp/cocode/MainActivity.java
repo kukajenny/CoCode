@@ -12,6 +12,7 @@ import android.util.Log;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
+import com.example.zjp.cocode.support.DataLoader;
 import com.example.zjp.cocode.ui.menu_fragment.HomeFragment;
 import com.example.zjp.cocode.ui.menu_fragment.MeFragment;
 import com.example.zjp.cocode.ui.menu_fragment.MessageFragment;
@@ -39,8 +40,6 @@ public class MainActivity extends FragmentActivity{
         bottomNavigation = (AHBottomNavigation) findViewById(R.id.bottom_navigation);
         setBottomNavigation();
         transaction = getSupportFragmentManager().beginTransaction();
-
-
     }
 
     private void setDefaultFragment()

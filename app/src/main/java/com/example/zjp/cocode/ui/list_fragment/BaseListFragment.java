@@ -1,5 +1,7 @@
 package com.example.zjp.cocode.ui.list_fragment;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,10 +11,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.example.zjp.cocode.R;
 import com.example.zjp.cocode.adapter.ListAdapter;
 import com.example.zjp.cocode.model.ItemModel;
+import com.example.zjp.cocode.ui.TypeShowActivity;
 
 import java.util.List;
 
@@ -28,6 +32,7 @@ public abstract class BaseListFragment extends Fragment {
     private RecyclerView recyclerView;
     private ListAdapter adapter;
     protected RecyclerView.LayoutManager mLayoutManager;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -43,5 +48,9 @@ public abstract class BaseListFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setLayoutManager(mLayoutManager);
+
+
     }
+
+
 }
